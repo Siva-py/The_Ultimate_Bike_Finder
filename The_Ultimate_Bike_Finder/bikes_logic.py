@@ -1,7 +1,7 @@
 import json
 import os
 # ------- Path to your data -------
-DATA_PATH = os.path.join("data", "bikes_data.json")
+DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "bikes_data.json")
 
 # ------- Helpers --------
 def safe_int(s, default=None):
@@ -254,6 +254,7 @@ def main():
         print(f"    Seat height: {b.get('seat_height_mm')/10:.1f} cm | Weight: {b.get('kerb_weight_kg')} kg")
         print(f"    Fuel tank: {b.get('fuel_tank_l')} L | Comfort: {b.get('comfort_level',3)}/5")
         print(f"    Score: {s}\n")
+
 
 
 
