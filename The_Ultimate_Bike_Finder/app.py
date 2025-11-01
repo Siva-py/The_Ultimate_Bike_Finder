@@ -38,12 +38,12 @@ with col1:
   "yezdi"
 ])
     budget_min = st.number_input("Min Budget (₹)", 0, 1000000, 50000, step=5000)
-    budget_max = st.number_input("Max Budget (₹)", 0, 2000000, 200000, step=5000)
-    min_mileage = st.slider("Minimum Mileage (kmpl)", 0, 100, 40)
+    budget_max = st.number_input("Max Budget (₹)", 0, 3000000, 200000, step=5000)
+    min_mileage = st.slider("Minimum Mileage (kmpl)", 1, 73, 40)
     engine_min = st.slider("Min Engine CC", 50, 2000, 100)
     engine_max = st.slider("Max Engine CC", 50, 2000, 500)
 with col2:
-    user_height_cm = st.slider("Your Height (cm)", 140, 200, 170)
+    user_height_cm = st.slider("Your Height (cm)", 140, 200, 180)
     ride_type = st.selectbox("Ride Type", ["both", "city", "highway"])
     wants_lightweight = st.checkbox("Prefer lightweight bikes (for city use)?")
     long_rides = st.checkbox("Planning many long rides / touring?")
@@ -80,6 +80,7 @@ if st.button("🔍 Find My Bike"):
                 st.markdown(f"⛽ **Fuel Tank:** {b['fuel_tank_l']} L | 🛋️ **Comfort:** {b.get('comfort_level',3)}/5")
                 st.progress(float(s))
                 st.write("---")
+
 
 
 
