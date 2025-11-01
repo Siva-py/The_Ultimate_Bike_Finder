@@ -84,4 +84,10 @@ if st.button("🔍 Find My Bike"):
 
 
 
+# Debug: check if Streamlit is loading your theme
+st.write("🎨 Current theme config:")
+st.write(st.runtime.get_option("theme"))
+
+
+
 
