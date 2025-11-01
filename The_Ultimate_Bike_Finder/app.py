@@ -81,12 +81,18 @@ if st.button("🔍 Find My Bike"):
                 st.progress(float(s))
                 st.write("---")
 
-
-
-
-# Debug: check if Streamlit is loading your theme
+#Theme
 st.write("🎨 Current theme config:")
-st.write(st.runtime.get_option("theme"))
+st.json({
+    "base": st.get_option("theme.base"),
+    "primaryColor": st.get_option("theme.primaryColor"),
+    "backgroundColor": st.get_option("theme.backgroundColor"),
+    "secondaryBackgroundColor": st.get_option("theme.secondaryBackgroundColor"),
+    "textColor": st.get_option("theme.textColor"),
+    "font": st.get_option("theme.font")
+})
+
+
 
 
 
