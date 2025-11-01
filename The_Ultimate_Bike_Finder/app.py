@@ -3,6 +3,9 @@ import json
 from bikes_logic import filter_and_score, get_height_range_mm, safe_int, safe_float
 import os
 
+
+os.environ["STREAMLIT_CONFIG_DIR"] = os.path.join(os.path.dirname(__file__), "..", ".streamlit")
+
 # Load data
 DATA_PATH = os.path.join(os.path.dirname(__file__), "data", "bikes_data.json")
 with open(DATA_PATH, "r", encoding="utf-8") as f:
@@ -80,6 +83,7 @@ if st.button("🔍 Find My Bike"):
                 st.markdown(f"⛽ **Fuel Tank:** {b['fuel_tank_l']} L | 🛋️ **Comfort:** {b.get('comfort_level',3)}/5")
                 st.progress(float(s))
                 st.write("---")
+
 
 
 
