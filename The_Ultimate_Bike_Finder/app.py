@@ -16,7 +16,27 @@ st.write("Answer a few quick questions to discover bikes that match your needs!"
 # --- User Inputs ---
 col1, col2 = st.columns(2)
 with col1:
-    brand = st.selectbox("Preferred brand", ["any", "hero", "honda", "yamaha", "bajaj", "suzuki", "royal enfield"])
+    brand = st.selectbox("Preferred brand", [
+  "any",
+  "aprilia",
+  "bajaj",
+  "benelli",
+  "bmw",
+  "cfmoto",
+  "ducati",
+  "hero",
+  "honda",
+  "indian motorcycle",
+  "jawa",
+  "kawasaki",
+  "ktm",
+  "royal enfield",
+  "suzuki",
+  "triumph",
+  "tvs",
+  "yamaha",
+  "yezdi"
+])
     budget_min = st.number_input("Min Budget (₹)", 0, 1000000, 50000, step=5000)
     budget_max = st.number_input("Max Budget (₹)", 0, 2000000, 200000, step=5000)
     min_mileage = st.slider("Minimum Mileage (kmpl)", 0, 100, 40)
@@ -60,6 +80,7 @@ if st.button("🔍 Find My Bike"):
                 st.markdown(f"⛽ **Fuel Tank:** {b['fuel_tank_l']} L | 🛋️ **Comfort:** {b.get('comfort_level',3)}/5")
                 st.progress(float(s))
                 st.write("---")
+
 
 
 
