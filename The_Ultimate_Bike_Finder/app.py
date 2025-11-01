@@ -1,6 +1,7 @@
 import streamlit as st
 import json
 from bikes_logic import filter_and_score, get_height_range_mm, safe_int, safe_float
+import os
 
 # Load data
 DATA_PATH = os.path.join("data", "bikes_data.json")
@@ -59,4 +60,5 @@ if st.button("🔍 Find My Bike"):
                 st.markdown(f"⛽ **Fuel Tank:** {b['fuel_tank_l']} L | 🛋️ **Comfort:** {b.get('comfort_level',3)}/5")
                 st.progress(float(s))
                 st.write("---")
+
 
