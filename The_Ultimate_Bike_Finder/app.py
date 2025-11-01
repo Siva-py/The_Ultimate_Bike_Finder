@@ -81,16 +81,7 @@ if st.button("🔍 Find My Bike"):
                 st.progress(float(s))
                 st.write("---")
 
-#Theme
-st.write("🎨 Current theme config:")
-st.json({
-    "base": st.get_option("theme.base"),
-    "primaryColor": st.get_option("theme.primaryColor"),
-    "backgroundColor": st.get_option("theme.backgroundColor"),
-    "secondaryBackgroundColor": st.get_option("theme.secondaryBackgroundColor"),
-    "textColor": st.get_option("theme.textColor"),
-    "font": st.get_option("theme.font")
-})
+
 
 
 
