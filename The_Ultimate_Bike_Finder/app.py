@@ -3,7 +3,7 @@ import json
 from bikes_logic import filter_and_score, get_height_range_mm, safe_int, safe_float
 
 # Load data
-DATA_PATH = r"C:\DM Drive\VIT SEM 1\Ai\projects\expertise system\The_Ultimate_Bike_Finder\data\bikes_data.json"
+DATA_PATH = os.path.join("data", "bikes_data.json")
 with open(DATA_PATH, "r", encoding="utf-8") as f:
     bikes = json.load(f)
 
@@ -59,3 +59,4 @@ if st.button("🔍 Find My Bike"):
                 st.markdown(f"⛽ **Fuel Tank:** {b['fuel_tank_l']} L | 🛋️ **Comfort:** {b.get('comfort_level',3)}/5")
                 st.progress(float(s))
                 st.write("---")
+
